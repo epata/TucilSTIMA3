@@ -31,5 +31,12 @@ namespace democonsole
         public void setY(double y){
             this.y = y;
         }
+        public void printCoordinate(){
+            Console.Write("(");
+            Console.Write(this.x);
+            Console.Write("; ");
+            Console.Write(this.y);
+            Console.Write(")");
+        }
     }
 }
