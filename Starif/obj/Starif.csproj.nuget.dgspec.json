@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj": {}
+    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\Starif\\Starif.csproj": {}
   },
   "projects": {
-    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj": {
+    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\Starif\\Starif.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj",
-        "projectName": "democonsole",
-        "projectPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj",
+        "projectUniqueName": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\Starif\\Starif.csproj",
+        "projectName": "Starif",
+        "projectPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\Starif\\Starif.csproj",
         "packagesPath": "C:\\Users\\Epata Tuah\\.nuget\\packages\\",
-        "outputPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\obj\\",
+        "outputPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\Starif\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Epata Tuah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net5.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,26 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "AutomaticGraphLayout": {
+              "target": "Package",
+              "version": "[1.1.11, )"
+            },
+            "AutomaticGraphLayout.Drawing": {
+              "target": "Package",
+              "version": "[1.1.11, )"
+            },
+            "AutomaticGraphLayout.GraphViewerGDI": {
+              "target": "Package",
+              "version": "[1.1.11, )"
+            },
+            "AutomaticGraphLayout.WpfGraphControl": {
+              "target": "Package",
+              "version": "[1.1.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -52,6 +70,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"

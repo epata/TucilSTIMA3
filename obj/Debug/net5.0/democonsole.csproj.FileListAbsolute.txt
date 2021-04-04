@@ -14,3 +14,19 @@ D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\obj\Debug\net5.0\democonsole.dll
 D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\obj\Debug\net5.0\ref\democonsole.dll
 D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\obj\Debug\net5.0\democonsole.pdb
 D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\obj\Debug\net5.0\democonsole.genruntimeconfig.cache
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\bin\Debug\net5.0\democonsole.exe
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\bin\Debug\net5.0\democonsole.deps.json
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\bin\Debug\net5.0\democonsole.runtimeconfig.json
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\bin\Debug\net5.0\democonsole.runtimeconfig.dev.json
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\bin\Debug\net5.0\democonsole.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\bin\Debug\net5.0\ref\democonsole.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\bin\Debug\net5.0\democonsole.pdb
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.csprojAssemblyReference.cache
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.AssemblyInfoInputs.cache
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.AssemblyInfo.cs
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.csproj.CoreCompileInputs.cache
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\ref\democonsole.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.pdb
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.genruntimeconfig.cache
