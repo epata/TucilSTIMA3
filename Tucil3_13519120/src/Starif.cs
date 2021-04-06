@@ -78,6 +78,7 @@ namespace Starif
                     List<Edge> rute = new List<Edge>();
                     List<Node> ruteNode = new List<Node>();
                     Node nodeAwalAlgo = nodeAwal;
+                    
 
                     j = 0;
                     while (nodeAwalAlgo != nodeTujuan) //selama nodeAwalAlgo bukan nodeTujuan
@@ -89,9 +90,15 @@ namespace Starif
                         j += 1;
                         while (i < jumlahEdges)
                         {
-                            
                             //g(n) = distance dari nodeAwalAlgo ke n
-                            double g = nodeAwalAlgo.getEdges()[i].getBobot();
+                            double sumG = 0;
+                            if (rute.Count>0){
+                                foreach (Edge edge in rute)
+                                {
+                                    sumG += edge.getBobot();
+                                }
+                            }
+                            double g = nodeAwalAlgo.getEdges()[i].getBobot() + sumG;
                             //h(n) = straight line distance from n ke nodeTujuan
                             double h = Edge.euclideanDistance(nodeAwalAlgo.getEdges()[i].getNext().getKoordinatNode(), nodeTujuan.getKoordinatNode());
                             //f(n) = g(n) + h(n)
