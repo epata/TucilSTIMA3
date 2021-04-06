@@ -26,6 +26,8 @@ namespace Starif
         //browse
         private void button1_Click(object sender, EventArgs e)
         {
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
             //string directory;
             Microsoft.Msagl.Drawing.Graph grafVisualization = new Microsoft.Msagl.Drawing.Graph("graf");
             browse.Filter = "*.txt (file berekstensi txt) | *.txt";
@@ -37,22 +39,25 @@ namespace Starif
                 input = File.ReadAllLines(fileDirectory);
                 label4.Text = filename;
                 graf = new Graf(input);
+                //menambahkan simpul simpul pada comboBox
                 for (i = 1; i <= graf.getGraphNode().Count; i++)
                 {
                     comboBox2.Items.Add(graf.getGraphNode()[i-1].getNamaNode());
                     comboBox3.Items.Add(graf.getGraphNode()[i-1].getNamaNode());
                 }
-                //gViewer1.Controls.Clear();
+                //visualisasi graf awal
                 grafVisualization = FrontEndUtility.grafVisualization(graf);
                 gViewer1.Graph = grafVisualization;
             }
         }
 
+        //submit
         private void button2_Click(object sender, EventArgs e)
         {
             if (comboBox2.Text != "awal" && comboBox3.Text != "tujuan")
             {
-                label4.Text = "Jalur";
+                label7.Text = "";
+                //label4.Text = "Jalur";
                 Microsoft.Msagl.Drawing.Graph grafVisualization = new Microsoft.Msagl.Drawing.Graph("graf");
                 int i, j;
                 // input simpul awal dan tujuan
@@ -71,37 +76,65 @@ namespace Starif
                 {
                     //ALGORITMA A*
                     List<Edge> rute = new List<Edge>();
+                    List<Node> ruteNode = new List<Node>();
                     Node nodeAwalAlgo = nodeAwal;
 
                     j = 0;
-                    while (nodeAwalAlgo != nodeTujuan)
+                    while (nodeAwalAlgo != nodeTujuan) //selama nodeAwalAlgo bukan nodeTujuan
                     {
-                        //label4.Text = "loop j ke: "+ j;
+                        ruteNode.Add(nodeAwalAlgo);
                         Dictionary<Node, double> results = new Dictionary<Node, double>();
                         int jumlahEdges = nodeAwalAlgo.getEdges().Count;
                         i = 0;
                         j += 1;
                         while (i < jumlahEdges)
                         {
-                            //label7.Text = "loop i ke: "+ i;
+                            
                             //g(n) = distance dari nodeAwalAlgo ke n
                             double g = nodeAwalAlgo.getEdges()[i].getBobot();
                             //h(n) = straight line distance from n ke nodeTujuan
                             double h = Edge.euclideanDistance(nodeAwalAlgo.getEdges()[i].getNext().getKoordinatNode(), nodeTujuan.getKoordinatNode());
                             //f(n) = g(n) + h(n)
                             double f = g + h;
-                            results.Add(nodeAwalAlgo.getEdges()[i].getNext(), f);
-
+                            if (!ruteNode.Contains(nodeAwalAlgo.getEdges()[i].getNext()))
+                            {
+                                results.Add(nodeAwalAlgo.getEdges()[i].getNext(), f);
+                            }
+                             
                             i += 1;
                         }
                         Node tempNodeAwal = nodeAwalAlgo;
-
-                        nodeAwalAlgo = results.OrderBy(KeyValuePair => KeyValuePair.Value).First().Key;
-                        Edge edgeRute = new Edge(tempNodeAwal, nodeAwalAlgo);
-                        rute.Add(edgeRute);
+                        if (results.Count > 0)
+                        {
+                            nodeAwalAlgo = results.OrderBy(KeyValuePair => KeyValuePair.Value).First().Key;
+                            Edge edgeRute = new Edge(tempNodeAwal, nodeAwalAlgo);
+                            rute.Add(edgeRute);
+                        } 
+                        else
+                        {
+                            break;
+                        }                       
                     }
+
+                    //visualisasi graf hasil
                     grafVisualization = FrontEndUtility.colorizedGrafVisualization(graf, rute);
                     gViewer1.Graph = grafVisualization;
+
+                    //hitung jarak rute yang dihasilkan
+                    double sumBobot = 0;
+                    foreach (Edge edge in rute)
+                    {
+                        sumBobot += edge.getBobot() * 100000;
+                    }
+                    label7.Text = sumBobot.ToString();
+
+                    //kasus tidak ada tujuan
+                    if (nodeAwalAlgo != nodeTujuan)
+                    {
+                        grafVisualization = FrontEndUtility.grafVisualization(graf);
+                        gViewer1.Graph = grafVisualization;
+                        label7.Text = "Tidak ada jalur";
+                    }
                 }
             } 
             else
@@ -121,6 +154,11 @@ namespace Starif
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

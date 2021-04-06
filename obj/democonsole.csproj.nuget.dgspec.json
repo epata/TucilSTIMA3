@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj": {}
+    "D:\\ITB\\Semester 4\\Stima\\Tucil3\\TucilSTIMA3\\democonsole.csproj": {}
   },
   "projects": {
-    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj": {
+    "D:\\ITB\\Semester 4\\Stima\\Tucil3\\TucilSTIMA3\\democonsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj",
+        "projectUniqueName": "D:\\ITB\\Semester 4\\Stima\\Tucil3\\TucilSTIMA3\\democonsole.csproj",
         "projectName": "democonsole",
-        "projectPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\democonsole.csproj",
-        "packagesPath": "C:\\Users\\Epata Tuah\\.nuget\\packages\\",
-        "outputPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\obj\\",
+        "projectPath": "D:\\ITB\\Semester 4\\Stima\\Tucil3\\TucilSTIMA3\\democonsole.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\ITB\\Semester 4\\Stima\\Tucil3\\TucilSTIMA3\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Epata Tuah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

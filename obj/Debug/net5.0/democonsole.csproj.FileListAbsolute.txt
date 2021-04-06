@@ -30,3 +30,5 @@ D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.dll
 D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\ref\democonsole.dll
 D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.pdb
 D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\obj\Debug\net5.0\democonsole.genruntimeconfig.cache
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\obj\Debug\net5.0\Starif.Starif.resources
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\obj\Debug\net5.0\democonsole.csproj.GenerateResource.cache

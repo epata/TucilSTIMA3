@@ -38,6 +38,7 @@ namespace Starif
 
         }
 
+        //Memvisualisasikan graf awal
         public static Microsoft.Msagl.Drawing.Graph grafVisualization(Graf graf)
         {
             Microsoft.Msagl.Drawing.Graph grafVisualization = new Microsoft.Msagl.Drawing.Graph("graf");
@@ -45,7 +46,11 @@ namespace Starif
             //gViewer1.Controls.Clear();
             Graf frontEndGraph = FrontEndUtility.deletedDuplicatedEdgesGraph(graf, graf.getGraphNode().Count);
             foreach (Node node in frontEndGraph.getGraphNode())
-            {
+            {   
+                if (node.getEdges().Count == 0)
+                {
+                    grafVisualization.AddNode(node.getNamaNode());
+                }
                 foreach (Edge edge in node.getEdges())
                 {
                     double roundedBobot = Math.Round(edge.getBobot() * 100000, 2);
@@ -56,6 +61,8 @@ namespace Starif
             }
             return grafVisualization;
         }
+
+        //Memvisualisasikan graf hasil
         public static Microsoft.Msagl.Drawing.Graph colorizedGrafVisualization(Graf graf, List<Edge> rute)
         {
             int i;
@@ -64,6 +71,10 @@ namespace Starif
             Graf frontEndGraph = FrontEndUtility.deletedDuplicatedEdgesGraph(graf, graf.getGraphNode().Count);
             foreach (Node node in frontEndGraph.getGraphNode())
             {
+                if (node.getEdges().Count == 0)
+                {
+                    grafVisualization.AddNode(node.getNamaNode());
+                }
                 foreach (Edge edge in node.getEdges())
                 {
                     double roundedBobot = Math.Round(edge.getBobot() * 100000, 2);

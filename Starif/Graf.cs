@@ -12,6 +12,7 @@ namespace Starif
     {
         private List<Node> nodeGraf;
 
+        //user defined graf constructor
         public Graf(string[] input)
         {
             int i, j;
@@ -41,35 +42,45 @@ namespace Starif
             }
         }
 
+        //user defined graf constructor 
         public Graf(int N){
             this.nodeGraf = new List<Node>(N);
         }
 
+        //user defined graf constructor
         public Graf(List<Node> nodeGraf){
             this.nodeGraf = nodeGraf;
         }
 
-        //cconst
+        //graf copy constructor
         public Graf(Graf G)
         {
             this.nodeGraf = G.nodeGraf;
         }
 
+        //menambahkan node ke graf dan mengembalikan node tersebut
         public Node addNode(string namaNode, Coordinate koordinatNode){
             Node addedNode = new Node(namaNode, koordinatNode);
             nodeGraf.Add(addedNode);
             return addedNode;
         }
+
+        //menambahkan node (prosedural)
         public void addNode(Node node){
             this.nodeGraf.Add(node);
         }
+
+        //menghapus node 
         public void removeNode(Node node){
             this.nodeGraf.Remove(node);
         }
 
+        //getter list node graf
         public List<Node> getGraphNode(){
             return this.nodeGraf;
         }
+
+        //mengecek apakah ada node pada graf
         public bool searchNode(Node node){
             bool ketemu = false;
             int i = 0;
@@ -81,6 +92,8 @@ namespace Starif
             }
             return ketemu;
         }
+
+        //mengecek apakah ada node pada graf dan mengembalikan node tersebut jika ada
         public Node searchNode(string namaNode){
             int i = 0;
             while (i < this.nodeGraf.Count){
@@ -92,26 +105,10 @@ namespace Starif
             return null;
         }
 
+        //setter list node graf
         public void setListNodes(List<Node> newNodes)
         {
             this.nodeGraf = newNodes;
-        }
-        public void printNodeAndEdge(){
-            foreach (Node node in this.nodeGraf)
-            {
-                Console.Write(node.getNamaNode());
-                Console.WriteLine(" Tetangganya: ");
-                int i = 0;
-                foreach (var edge in node.getEdges()){
-                    i+=1;
-                    Console.Write("Bobot: ");
-                    Console.Write(edge.getBobot());
-                    Console.Write("; ");
-                    Console.Write(i);
-                    Console.Write(". ");
-                    Console.WriteLine(edge.getNext().getNamaNode());
-                }
-            }
         }
     }
 }

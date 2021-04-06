@@ -1,0 +1,9 @@
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\Starif.exe
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\Starif.dll
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\Starif.deps.json
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\Starif.runtimeconfig.json
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\Starif.pdb
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\AutomaticGraphLayout.dll
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\AutomaticGraphLayout.Drawing.dll
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\Microsoft.Msagl.GraphViewerGdi.dll
+D:\ITB\Semester 4\Stima\Tucil3\TucilSTIMA3\Starif\Microsoft.Msagl.WpfGraphControl.dll

@@ -11,31 +11,45 @@ namespace Starif
         private string namaNode;
         private Coordinate koordinatNode;
         private List<Edge> edges = new List<Edge>();
-        
+
+        //default constructor
         public Node(){
             this.namaNode = "XXX";
             this.koordinatNode = new Coordinate();
         }
+
+        //user defined constructor
         public Node(string namaNode, Coordinate koordinatNode){
             this.namaNode = namaNode;
             this.koordinatNode = koordinatNode;
         }
+
+        //getter nama node
         public string getNamaNode(){
             return this.namaNode;
         }
+
+        //getter koordinat node
         public Coordinate getKoordinatNode(){
             return this.koordinatNode;
         }
+
+        //getter list edge node
         public List<Edge> getEdges(){
             return this.edges;
         }
+
+        //setter nama node
         public void setNamaNode(string namaNode){
             this.namaNode = namaNode;
         }
+
+        //setter koordinat node
         public void setKoordinatNode(Coordinate koordinatNode){
             this.koordinatNode = koordinatNode;
         }
 
+        //menambahkan edge pada node dengan suatu next node
         public void addEdge(Node nextNode){
             int i;
             bool adaNext = false;
@@ -65,10 +79,13 @@ namespace Starif
             }
         }
 
+        //setter list edge node
         public void setEdges(List<Edge> newEdges)
         {
             this.edges = newEdges;
         } 
+
+        //menghapus edge node dengan suatu next node
         public void removeEdge(Node nextNode){
             int i = 0;
             foreach (Edge edge in this.edges)
