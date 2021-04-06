@@ -36,9 +36,14 @@ namespace Starif
                 Graf graf = new Graf(N);
                 for (i = 1; i <= N; i++)
                 {
-                
+                    comboBox1.Items.Add("sebx:" + input[i].Split(" ")[1]);
+                    comboBox1.Items.Add("seby:" + input[i].Split(" ")[2]);
                     double x = Convert.ToDouble(input[i].Split(" ")[1], CultureInfo.InvariantCulture);
                     double y = Convert.ToDouble(input[i].Split(" ")[2], CultureInfo.InvariantCulture);
+                    double z = x + y;
+                    comboBox1.Items.Add("setx:" + x);
+                    comboBox1.Items.Add("sety:" + y);
+                    comboBox1.Items.Add("z: " + z);
                     Coordinate nodeCoordinate = new Coordinate(x, y);
                     string namaNode = input[i].Split(" ")[0];
                     //Node node = new Node(namaNode, nodeCoordinate);
