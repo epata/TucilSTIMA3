@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITB\\Semester 4\\Stima\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj": {}
+    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj": {}
   },
   "projects": {
-    "D:\\ITB\\Semester 4\\Stima\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj": {
+    "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITB\\Semester 4\\Stima\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj",
+        "projectUniqueName": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj",
         "projectName": "Starif",
-        "projectPath": "D:\\ITB\\Semester 4\\Stima\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\ITB\\Semester 4\\Stima\\TucilSTIMA3\\Tucil3_13519120\\src\\obj\\",
+        "projectPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\Tucil3_13519120\\src\\Starif.csproj",
+        "packagesPath": "C:\\Users\\Epata Tuah\\.nuget\\packages\\",
+        "outputPath": "D:\\Kuliah\\Semester4\\TucilSTIMA3\\TucilSTIMA3\\Tucil3_13519120\\src\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Epata Tuah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

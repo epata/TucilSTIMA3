@@ -1,0 +1,9 @@
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\Starif.exe
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\Starif.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\Starif.deps.json
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\Starif.runtimeconfig.json
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\Starif.pdb
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\AutomaticGraphLayout.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\AutomaticGraphLayout.Drawing.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\Microsoft.Msagl.GraphViewerGdi.dll
+D:\Kuliah\Semester4\TucilSTIMA3\TucilSTIMA3\Tucil3_13519120\bin\Microsoft.Msagl.WpfGraphControl.dll
