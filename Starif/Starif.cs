@@ -16,9 +16,10 @@ namespace Starif
     public partial class Starif : Form
     {
         private OpenFileDialog browse = new OpenFileDialog();
-
+        private string[] input;
+        private Graf graf;
         public Starif()
-        {
+        {   
             InitializeComponent();
         }
 
@@ -26,49 +27,39 @@ namespace Starif
         private void button1_Click(object sender, EventArgs e)
         {
             //string directory;
+            Microsoft.Msagl.Drawing.Graph grafVisualization = new Microsoft.Msagl.Drawing.Graph("graf");
             browse.Filter = "*.txt (file berekstensi txt) | *.txt";
             if (browse.ShowDialog() == DialogResult.OK)
+            {   
+                int i;
+                string fileDirectory = browse.FileName;
+                string filename = browse.SafeFileName;
+                input = File.ReadAllLines(fileDirectory);
+                label4.Text = filename;
+                graf = new Graf(input);
+                for (i = 1; i <= graf.getGraphNode().Count; i++)
+                {
+                    comboBox2.Items.Add(graf.getGraphNode()[i-1].getNamaNode());
+                    comboBox3.Items.Add(graf.getGraphNode()[i-1].getNamaNode());
+                }
+                //gViewer1.Controls.Clear();
+                grafVisualization = FrontEndUtility.grafVisualization(graf);
+                gViewer1.Graph = grafVisualization;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.Text != "awal" && comboBox3.Text != "tujuan")
             {
+                label4.Text = "Jalur";
                 Microsoft.Msagl.Drawing.Graph grafVisualization = new Microsoft.Msagl.Drawing.Graph("graf");
                 int i, j;
-                string[] input = File.ReadAllLines(@"input.txt");
-                int N = Int32.Parse(input[0]);
-                Graf graf = new Graf(N);
-                for (i = 1; i <= N; i++)
-                {
-                    comboBox1.Items.Add("sebx:" + input[i].Split(" ")[1]);
-                    comboBox1.Items.Add("seby:" + input[i].Split(" ")[2]);
-                    double x = Convert.ToDouble(input[i].Split(" ")[1], CultureInfo.InvariantCulture);
-                    double y = Convert.ToDouble(input[i].Split(" ")[2], CultureInfo.InvariantCulture);
-                    double z = x + y;
-                    comboBox1.Items.Add("setx:" + x);
-                    comboBox1.Items.Add("sety:" + y);
-                    comboBox1.Items.Add("z: " + z);
-                    Coordinate nodeCoordinate = new Coordinate(x, y);
-                    string namaNode = input[i].Split(" ")[0];
-                    //Node node = new Node(namaNode, nodeCoordinate);
-                    graf.addNode(namaNode, nodeCoordinate);
-                    comboBox2.Items.Add(namaNode);
-                    comboBox3.Items.Add(namaNode);
-                }
-                for (i = 0; i < N; i++)
-                {
-                    for (j = 0; j < N; j++)
-                    {
-                        if (input[i + N + 1].Split("  ")[j] == "1")
-                        {
-                            graf.getGraphNode()[i].addEdge(graf.getGraphNode()[j]);
-                        }
-                    }
-                }
-
                 // input simpul awal dan tujuan
+                string awal = comboBox2.Text;
+                string tujuan = comboBox3.Text;
 
-                string awal = "Bandung";
-
-
-                string tujuan = "Jakarta";
-
+                graf = new Graf(input);
                 Node nodeAwal = graf.searchNode(awal);
                 Node nodeTujuan = graf.searchNode(tujuan);
 
@@ -85,12 +76,14 @@ namespace Starif
                     j = 0;
                     while (nodeAwalAlgo != nodeTujuan)
                     {
+                        //label4.Text = "loop j ke: "+ j;
                         Dictionary<Node, double> results = new Dictionary<Node, double>();
                         int jumlahEdges = nodeAwalAlgo.getEdges().Count;
                         i = 0;
                         j += 1;
                         while (i < jumlahEdges)
                         {
+                            //label7.Text = "loop i ke: "+ i;
                             //g(n) = distance dari nodeAwalAlgo ke n
                             double g = nodeAwalAlgo.getEdges()[i].getBobot();
                             //h(n) = straight line distance from n ke nodeTujuan
@@ -98,8 +91,6 @@ namespace Starif
                             //f(n) = g(n) + h(n)
                             double f = g + h;
                             results.Add(nodeAwalAlgo.getEdges()[i].getNext(), f);
-                            comboBox1.Items.Add("jumlahedges:" + jumlahEdges);
-
 
                             i += 1;
                         }
@@ -109,53 +100,29 @@ namespace Starif
                         Edge edgeRute = new Edge(tempNodeAwal, nodeAwalAlgo);
                         rute.Add(edgeRute);
                     }
-
-                    Graf frontEndGraph = FrontEndUtility.deletedDuplicatedEdgesGraph(graf, N);
-                    foreach (Node node in frontEndGraph.getGraphNode())
-                    {
-                        foreach (Edge edge in node.getEdges())
-                        {
-                            comboBox1.Items.Add(edge.getNode().getNamaNode());
-                            comboBox1.Items.Add(edge.getNext().getNamaNode());
-                            double roundedBobot = Math.Round(edge.getBobot(), 2);
-                            var garis = grafVisualization.AddEdge(edge.getNode().getNamaNode(), roundedBobot.ToString(), edge.getNext().getNamaNode());
-                            garis.Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
-                            garis.Attr.ArrowheadAtSource = Microsoft.Msagl.Drawing.ArrowStyle.None;
-                        
-                            for (i=0; i<rute.Count; i++){
-                                bool edgeFirstCheck = rute[i].getNode().getNamaNode() == edge.getNode().getNamaNode() && rute[i].getNext().getNamaNode() == edge.getNext().getNamaNode();
-                                bool edgeSecondCheck = rute[i].getNode().getNamaNode() == edge.getNext().getNamaNode() && rute[i].getNext().getNamaNode() == edge.getNode().getNamaNode();
-                                if (edgeFirstCheck || edgeSecondCheck){
-                                    comboBox1.Items.Add("INI RUTE");
-                                    garis.Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
-                                    if (i == 0){
-                                        grafVisualization.FindNode(edge.getNode().getNamaNode()).Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightGreen;
-                                    } else if (i == rute.Count-1){
-                                        grafVisualization.FindNode(edge.getNext().getNamaNode()).Attr.FillColor = Microsoft.Msagl.Drawing.Color.MediumBlue;
-                                    } else {
-                                        grafVisualization.FindNode(edge.getNode().getNamaNode()).Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightBlue;
-                                        grafVisualization.FindNode(edge.getNext().getNamaNode()).Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightBlue;
-                                    }
-                                }
-                            }                            
-                        }
-                    }
+                    grafVisualization = FrontEndUtility.colorizedGrafVisualization(graf, rute);
+                    gViewer1.Graph = grafVisualization;
                 }
-                gViewer1.Graph = grafVisualization;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (comboBox2.Text != "" || comboBox3.Text != "")
+            } 
+            else
             {
-
+                label4.Text = "Tidak ada jalur";
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

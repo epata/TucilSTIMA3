@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Globalization;
 //using System.Linq;
 using System.Text;
 //using System.Threading.Tasks
@@ -10,6 +11,35 @@ namespace Starif
     class Graf
     {
         private List<Node> nodeGraf;
+
+        public Graf(string[] input)
+        {
+            int i, j;
+            int N = Int32.Parse(input[0]);
+            this.nodeGraf = new List<Node>(N);
+            for (i = 1; i <= N; i++)
+            {
+
+                double x = Convert.ToDouble(input[i].Split(" ")[1], CultureInfo.InvariantCulture);
+                double y = Convert.ToDouble(input[i].Split(" ")[2], CultureInfo.InvariantCulture);
+                double z = x + y;
+
+                Coordinate nodeCoordinate = new Coordinate(x, y);
+                string namaNode = input[i].Split(" ")[0];
+                //Node node = new Node(namaNode, nodeCoordinate);
+                this.addNode(namaNode, nodeCoordinate);
+            }
+            for (i = 0; i < N; i++)
+            {
+                for (j = 0; j < N; j++)
+                {
+                    if (input[i + N + 1].Split("  ")[j] == "1")
+                    {
+                        this.nodeGraf[i].addEdge(this.nodeGraf[j]);
+                    }
+                }
+            }
+        }
 
         public Graf(int N){
             this.nodeGraf = new List<Node>(N);
