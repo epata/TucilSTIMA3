@@ -6,6 +6,7 @@
 * [Deskripsi Singkat Algoritma](#deskripsi-singkat)
 * [Requirements](#requirements)
 * [Setup](#setup)
+* [Format Input](#format-input)
 * [Contoh Kode](#contoh-kode) 
 * [Fitur](#fitur)
 * [Status](#status)
@@ -66,6 +67,18 @@ Project memanfaatkan perkakas .NET (disarankan menggunakan Visual Studio)
 * Membuka Aplikasi
 1. Buka Starif.exe
 2. Aplikasi dijalankan dan siap dipakai
+
+## Format Input
+
+
+`<jumlah simpul>`
+
+
+`<nama simpul> <latitude> <longitude>`
+
+
+`<adjacency matrix (setiap angka dipisahkan dua spasi "  ")>`
+
 
 ## Contoh kode 
 * Menghitung euclidean distance:
