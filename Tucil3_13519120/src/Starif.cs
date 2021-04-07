@@ -110,9 +110,11 @@ namespace Starif
                              
                             i += 1;
                         }
+
                         Node tempNodeAwal = nodeAwalAlgo;
                         if (results.Count > 0)
                         {
+                            //ambil nilai f minimum, update nodeAwalAlgo
                             nodeAwalAlgo = results.OrderBy(KeyValuePair => KeyValuePair.Value).First().Key;
                             Edge edgeRute = new Edge(tempNodeAwal, nodeAwalAlgo);
                             rute.Add(edgeRute);
